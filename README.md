@@ -57,7 +57,7 @@
 
      * Google Fonts (Roboto, Lato) loaded via CDN.
      * Font Awesome for social-media icons.
-   * **No Build Step:** All code is vanilla—no Node.js, bundlers, or preprocessors—making setup and maintenance lightweight.
+   * **No Build Step:** All code is vanilla no Node.js, bundlers, or preprocessors making setup and maintenance lightweight.
    * **Image Optimization:** All graphics are pre-compressed to balance quality and performance.
 
 Feel free to include this summary in your GitHub README to clearly convey the purpose, organization, and usage of your web portfolio project.
