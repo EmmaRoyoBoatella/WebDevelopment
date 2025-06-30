@@ -1,0 +1,368 @@
+@import url('https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap');
+
+@font-face {
+  font-family: 'Osake'; 
+  src: url('../tipografia/Osake.ttf') format('truetype'); 
+}
+
+@font-face {
+  font-family: 'Renji';
+  src: url('../tipografia/Renji\ Free\ Trial.ttf') format('truetype'); 
+}
+
+@font-face {
+  font-family: 'BrokenDreams';
+  src: url('../tipografia/BrokenDreams.ttf') format('truetype'); 
+}
+
+@font-face {
+  font-family: 'Arkhip'; 
+  src: url('../tipografia/Arkhip_font.ttf') format('truetype'); 
+}
+
+*{
+    font-family: 'Arkhip', sans-serif;
+    box-sizing: border-box;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 10px 50px;
+    background: rgba(255, 0, 0, 0.9);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .logo{
+    font-size: 32px;
+    color: #fff;
+    font-family: 'Renji', sans-serif;
+    text-decoration: none;
+    margin-right: 600px;
+  }
+  
+  .opcion{
+    font-size: 32px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+  }
+  
+  .navbar img{
+    margin-left: 50px;
+  }
+  
+  .navbar a{
+    position: relative;
+    font-size: 15px;
+    color: #fff;
+    margin-left: 10px ;
+  }
+  
+  .navbar a::before{
+    content: '';
+    position: absolute;
+    top: 100%;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transition: .3s;
+  }
+  
+  .navbar a.active::before,
+  .navbar a:hover::before,
+  .navbar a:focus::before {
+    width: 100%;
+  }
+
+
+
+body{
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    background-image: url(../media/fondo1.jpg);
+}
+
+.seccion1, .seccion2{
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.seccion1::before{
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: url("../media/base_Explora.jpg") top center;
+    background-size: cover;
+}
+
+.seccion1::after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: url("../media/capa1_explora.PNG") top center;
+    background-size: cover;
+}
+
+.seccion1 .text1{
+    left: 43%;
+    position: absolute;
+    font-family: 'BrokenDreams', sans-serif;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.3), 5px 5px 70px rgba(255, 255, 255, 0.5);
+    top: 22%; 
+    font-size: 10vw; 
+    transform: translateZ(-0.5px) scale(1.5, 1.6) translate(-33%, 10%);
+    
+    
+}
+
+.seccion1 .text2{
+    left: 49%;
+    position: absolute;
+    font-family: 'Osake', sans-serif; 
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.3), 5px 5px 70px rgba(255, 255, 255, 0.5);
+    top: 47%; 
+    font-size: 9vw; 
+    transform: translateZ(-0.5px) scale(1.5, 1.6) translate(-33%, 10%);
+}
+
+.seccion2 {
+    display: flex;
+    background-color: #222;
+}
+  
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: #fff;
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.3);
+    width: 80%;
+    margin: auto;
+    padding: 10px;
+}
+.gallery-item {
+    flex-basis: 32.7%;
+    margin-bottom: 6px;
+    opacity: .85;
+    cursor: pointer;
+}
+.gallery-item:hover {
+    opacity: 1;
+}
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.gallery-content {
+    font-size: .8em;
+}
+
+.lightbox {
+    position: fixed;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    height: 100%;              
+    overflow: auto;
+    top: 0;
+    left: 0;
+}
+.lightbox-content {
+    position: relative;
+    width: 70%;
+    height: 70%;
+    margin: 5% auto;
+}
+.lightbox-content img {
+    border-radius: 7px;
+    box-shadow: 0 0 3px 0 rgba(225, 225, 225, .25);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.lightbox-prev,
+.lightbox-next {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 7px;
+    top: 45%;
+    cursor: pointer;
+}
+.lightbox-prev {
+    left: 0;
+}
+.lightbox-next {
+    right: 0;
+}
+.lightbox-prev:hover,
+.lightbox-next:hover {
+    opacity: .8;
+}
+
+@media (max-width: 767px) {
+    .gallery-container {
+        width: 100%;
+    }
+    .gallery-item {
+        flex-basis: 49.80%;
+        margin-bottom: 3px;
+    }
+    .lightbox-content {
+        width: 80%;
+        height: 60%;
+        margin: 15% auto;
+    }
+}
+@media (max-width: 480px) {
+    .gallery-item {
+        flex-basis: 100%;
+        margin-bottom: 1px;
+    }
+    .lightbox-content {
+        width: 90%;
+        margin: 20% auto;
+    }
+}
+
+
+footer {
+    background-color: rgba(255, 0, 0, 0.9);
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+    margin-top: 0px; 
+}
+  
+footer p {
+    margin: 0;
+    margin-top: 10px; 
+    font-size: 14px;
+}
+
+
+
+
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+    .logo {
+      margin-right: 0;
+      font-size: 24px;
+    }
+  
+    .navbar {
+      padding: 10px 20px;
+    }
+  
+    .navbar img {
+      margin-left: 20px;
+    }
+  
+    .navbar a {
+      font-size: 14px; 
+    }
+}
+  
+
+/* Small devices (landscape phones, entre 576px y 767.98px) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .logo {
+      margin-right: 0;
+      font-size: 28px;
+    }
+  
+    .navbar {
+      padding: 10px 25px;
+    }
+  
+    .navbar img {
+      margin-left: 30px;
+    }
+  
+    .navbar a {
+      font-size: 16px;
+    }
+}
+  
+
+/* Medium devices (tablets, entre 768px y 991.98px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .logo {
+      margin-right: 0;
+      font-size: 30px;
+    }
+  
+    .navbar {
+      padding: 10px 30px;
+    }
+  
+    .navbar img {
+      margin-left: 40px;
+    }
+  
+    .navbar a {
+      font-size: 18px;
+    }
+}
+  
+/* Large devices (desktops, entre 992px y 1199.98) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .logo {
+      margin-right: 0; 
+      font-size: 32px;
+    }
+  
+    .navbar {
+      padding: 10px 40px;
+    }
+  
+    .navbar img {
+      margin-left: 50px;
+    }
+  
+    .navbar a {
+      font-size: 20px;
+    }
+}
+  
+/* Extra large devices (large desktops, entre 1200px y 1399.98px) */
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+    .logo {
+      margin-right: 50px; 
+      font-size: 34px;
+    }
+  
+    .navbar {
+      padding: 10px 45px;
+    }
+  
+    .navbar img {
+      margin-left: 60px;
+    }
+  
+    .navbar a {
+      font-size: 22px;
+    }
+}
+  
+/* Extra large devices (large desktops, 1400px and up) */
+@media (min-width: 1400px) {
+
+}
+  
